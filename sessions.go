@@ -48,6 +48,7 @@ type Options struct {
 	MaxAge   int
 	Secure   bool
 	HttpOnly bool
+	SameSite http.SameSite
 }
 
 // Session stores the values and optional configuration for a session.
@@ -142,6 +143,7 @@ func (s *session) Options(options Options) {
 		MaxAge:   options.MaxAge,
 		Secure:   options.Secure,
 		HttpOnly: options.HttpOnly,
+		SameSite: options.SameSite,
 	}
 }
 
